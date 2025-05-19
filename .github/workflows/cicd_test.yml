@@ -29,3 +29,22 @@ jobs:
           echo "--------------------------------"
           ls -R $RUNNER_WORKSPACE
 
+      - name: Check if file exists, using the environment variable
+        run: |
+          FILE_PATH="$RUNNER_WORKSPACE/learn_cicd/mydbt/one.py"
+          if [ -f "$FILE_PATH" ]; then
+            echo "File exists at $FILE_PATH!"
+          else
+            echo "File does not exist!"
+            exit 1
+          fi
+
+      - name: Check if file exists, using the absolute path
+        run: |
+          FILE_PATH="/home/runner/work/learn_cicd/learn_cicd/mydbt/one.py"
+          if [ -f "$FILE_PATH" ]; then
+            echo "File exists at $FILE_PATH!"
+          else
+            echo "File does not exist!"
+            exit 1
+          fi
