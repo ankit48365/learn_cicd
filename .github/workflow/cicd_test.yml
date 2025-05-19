@@ -1,0 +1,32 @@
+name: dbt CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  dbt-run:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Debug GitHub Actions Workspace
+        run: |
+          echo "RUNNER_WORKSPACE is at: $RUNNER_WORKSPACE"
+          echo "Everything in this workspace:"
+          echo "--------------------------------"
+          ls -R $RUNNER_WORKSPACE
