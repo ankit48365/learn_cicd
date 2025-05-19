@@ -1,4 +1,4 @@
-name: dbt CI/CD Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -30,3 +30,6 @@ jobs:
           echo "Everything in this workspace:"
           echo "--------------------------------"
           ls -R $RUNNER_WORKSPACE
+
+      - name: Debug Environment Variables
+        run: env
