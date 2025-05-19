@@ -28,7 +28,7 @@ jobs:
         run: env | grep RUNNER_WORKSPACE
 
       - name: Absolute Path
-        run: cd $RUNNER_WORKSPACE/mydbt && pwd
+        run: cd $RUNNER_WORKSPACE/learn_cicd/mydbt && pwd
 
       - name: Debug GitHub Actions Workspace
         run: |
