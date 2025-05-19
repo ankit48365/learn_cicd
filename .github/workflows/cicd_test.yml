@@ -24,6 +24,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Find your Github Temp Workspace Path
+        run: env | grep RUNNER_WORKSPACE
+
       - name: Debug GitHub Actions Workspace
         run: |
           echo "RUNNER_WORKSPACE is at: $RUNNER_WORKSPACE"
@@ -31,5 +34,3 @@ jobs:
           echo "--------------------------------"
           ls -R $RUNNER_WORKSPACE
 
-      - name: Debug Environment Variables
-        run: env
