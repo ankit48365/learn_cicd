@@ -24,8 +24,8 @@ jobs:
         run: env | grep RUNNER_WORKSPACE  # If no results are returned, then remove '| grep RUNNER_WORKSPACE' from the command. and run again as RUNNER_WORKSPACE in the past was also referred as GITHUB_WORKSPACE.
 
 
-      # - name: List the contents of the workspace
-      #   run: |
-      #     echo "--------------------------------"
-      #     ls -R $RUNNER_WORKSPACE
+      - name: List the contents of the workspace
+        run: |
+          echo "--------------------------------"
+          ls -R $RUNNER_WORKSPACE
 
